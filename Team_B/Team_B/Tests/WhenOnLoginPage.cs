@@ -26,9 +26,11 @@ namespace Team_B.Tests
         private IWebDriver driver = new ChromeDriver(Path.GetDirectoryName("C:\\Users\\dghiuzan\\Downloads\\"));
 
         [Test]
-        public void ShouldLoginAndDisplayDashboardPage()
+        public void ShouldDisplayError()
         {
             LoginPage = new Login(driver);
+            var incorrect = LoginPage.LoginUserInvalidCredentials("sdsdsdsdsd", "sdsdsdsd");
+            Console.WriteLine(incorrect);
         }
 
         [TearDown]
